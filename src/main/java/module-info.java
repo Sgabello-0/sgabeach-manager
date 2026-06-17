@@ -1,8 +1,8 @@
-module com.sgabello.sgabeachmanage {
+module com.sgabello.sgabeachmanager {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.sgabello.sgabeachmanage to javafx.fxml;
-    exports com.sgabello.sgabeachmanage;
+    opens com.sgabello.sgabeachmanager to javafx.fxml;
+    exports com.sgabello.sgabeachmanager;
 }

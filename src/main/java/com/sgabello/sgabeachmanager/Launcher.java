@@ -1,4 +1,4 @@
-package com.sgabello.sgabeachmanage;
+package com.sgabello.sgabeachmanager;
 
 import javafx.application.Application;
 
