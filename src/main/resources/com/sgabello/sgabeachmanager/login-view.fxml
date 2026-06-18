@@ -9,21 +9,22 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.sgabello.sgabeachmanager.controllers.LoginController">
 
-    <top>
-        <VBox style="-fx-font-weight: bold; -fx-padding: 20; -fx-border-color: transparent #cccccc transparent transparent; -fx-border-width: 0 0 1 0;" alignment="CENTER">
-            <Label text="SgaBeach Manager" style="-fx-font-size: 32"/>
-            <Label text="Gestionale Spiaggia" style="-fx-font-size: 24"/>
-        </VBox>
-    </top>
     <center>
         <VBox alignment="CENTER">
-            <HBox>
-                <Label text="Utente"/>
-                <TextField prefWidth="130" fx:id="userField"/>
+            <VBox style="-fx-font-weight: bold; -fx-padding: 50; -fx-border-color: transparent #cccccc transparent transparent; -fx-border-width: 0 0 1 0;" alignment="CENTER">
+                <Label text="SgaBeach Manager" style="-fx-font-size: 32"/>
+                <Label text="Gestionale Spiaggia" style="-fx-font-size: 24"/>
+            </VBox>
+            <HBox style="-fx-padding: 10" alignment="CENTER" spacing="20">
+                <Label text="Utente" prefWidth="70"/>
+                <TextField prefWidth="180" fx:id="userField"/>
             </HBox>
-            <HBox>
-                <Label text="Password"/>
-                <PasswordField prefWidth="130" fx:id="passwordField"/>
+            <HBox style="-fx-padding: 10" alignment="CENTER" spacing="20">
+                <Label text="Password" prefWidth="70"/>
+                <PasswordField prefWidth="180" fx:id="passwordField"/>
+            </HBox>
+            <HBox style="-fx-padding: 40" alignment="CENTER" spacing="20">
+                <Button text="Accedi"/>
             </HBox>
         </VBox>
     </center>

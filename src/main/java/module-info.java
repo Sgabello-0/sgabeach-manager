@@ -1,6 +1,7 @@
 module com.sgabello.sgabeachmanager {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.sgabello.sgabeachmanager to javafx.fxml;
