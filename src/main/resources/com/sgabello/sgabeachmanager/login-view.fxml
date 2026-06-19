@@ -24,7 +24,7 @@
                 <PasswordField prefWidth="180" fx:id="passwordField"/>
             </HBox>
             <HBox style="-fx-padding: 40" alignment="CENTER" spacing="20">
-                <Button text="Accedi"/>
+                <Button fx:id="loginButton" prefWidth="100"/>
             </HBox>
         </VBox>
     </center>
