@@ -14,9 +14,7 @@ public class SceneManager {
 
     public static void openScene(String fxmlPath, String title, double width, double height, boolean resizable) {
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle(
-                    "com.sgabello.sgabeachmanager.i18n.messages", LanguageManager.getLocale());
-            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath), bundle);
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath), LanguageManager.getBundle());
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setMinWidth(width);
@@ -31,9 +29,7 @@ public class SceneManager {
 
     public static void openSceneMaximized(String fxmlPath, String title, boolean resizable) {
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle(
-                    "com.sgabello.sgabeachmanager.i18n.messages", LanguageManager.getLocale());
-            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath), bundle);
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath), LanguageManager.getBundle());
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setMaximized(true);

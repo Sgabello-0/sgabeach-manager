@@ -2,6 +2,7 @@ package com.sgabello.sgabeachmanager.controllers;
 
 import com.sgabello.sgabeachmanager.modules.User;
 import com.sgabello.sgabeachmanager.services.Alerts;
+import com.sgabello.sgabeachmanager.services.LanguageManager;
 import com.sgabello.sgabeachmanager.services.SceneManager;
 import com.sgabello.sgabeachmanager.services.databasemanagers.AuthManager;
 import javafx.fxml.FXML;
@@ -18,7 +19,7 @@ public class LoginController {
     @FXML private PasswordField passwordField;
     @FXML private Button loginButton;
 
-    private boolean userExist = AuthManager.userExist();
+    private final boolean userExist = AuthManager.userExist();
 
     private void onLoginClick(){
         String username = userField.getText();
@@ -26,13 +27,13 @@ public class LoginController {
         if (username != null && password != null){
             User user = new User(username, password);
             if(AuthManager.loginUser(user)){
-                SceneManager.openSceneMaximized("/com/sgabello/sgabeachmanager/main-view.fxml", "SgaBeach Manager", false);
+                SceneManager.openSceneMaximized("/com/sgabello/sgabeachmanager/main-view.fxml", LanguageManager.get("app.title"), false);
                 SceneManager.closeScene(userField);
             } else {
-                Alerts.alertErrore("The user doesn't exist.");
+                Alerts.alertErrore(LanguageManager.get("alert.context.login.userdoesntexist"));
             }
         } else {
-            Alerts.alertErrore("Username and password can't be blank.");
+            Alerts.alertErrore(LanguageManager.get("alert.context.login.fieldsnotblank"));
         }
 
     }
@@ -45,16 +46,16 @@ public class LoginController {
             AuthManager.createUser(user);
         }
 
-        SceneManager.openScene("com/sgabello/sgabeachmanager/login-view.fxml", "SgaBeach Manager", 400, 400, false);
+        SceneManager.openScene("com/sgabello/sgabeachmanager/login-view.fxml", LanguageManager.get("app.title"), 400, 400, false);
         SceneManager.closeScene(userField);
     }
 
     public void initialize(){
         if (userExist){
-            loginButton.setText("Accedi");
+            loginButton.setText(LanguageManager.get("login.button.login"));
             loginButton.setOnAction(event -> onLoginClick());
         } else {
-            loginButton.setText("Registrati");
+            loginButton.setText(LanguageManager.get("login.button.register"));
             loginButton.setOnAction(event -> onRegisterClick());
         }
     }

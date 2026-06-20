@@ -6,10 +6,9 @@ public class Alerts {
 
     public static void alertErrore(String context){
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Errore");
+        alert.setTitle(LanguageManager.get("alert.title.error"));
         alert.setHeaderText(null);
-        alert.setContentText(context + " Coglione.");
+        alert.setContentText(context);
         alert.showAndWait();
     }
-
 }

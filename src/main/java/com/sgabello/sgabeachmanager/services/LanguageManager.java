@@ -19,5 +19,5 @@ public class LanguageManager {
         return bundle.getString(key);
     }
 
-    public static Locale getLocale() {return locale;}
+    public static ResourceBundle getBundle(){return bundle;}
 }

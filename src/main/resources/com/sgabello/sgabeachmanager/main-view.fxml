@@ -7,42 +7,44 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.control.ScrollPane?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.sgabello.sgabeachmanager.controllers.MainMenuController">
+            fx:controller="com.sgabello.sgabeachmanager.controllers.MainMenuController"
+            fx:id="mainBorderPane">
 
     <left>
         <VBox style="-fx-border-color: transparent #cccccc transparent transparent; -fx-border-width: 0 1 0 0;" spacing="10">
             <VBox style="-fx-font-weight: bold; -fx-padding: 30" alignment="CENTER">
-                <Label text="SgaBeach Manager" style="-fx-font-size: 28"/>
-                <Label text="Gestionale Spiaggia" style="-fx-font-size: 16"/>
+                <Label text="%app.title" style="-fx-font-size: 28"/>
+                <Label text="%app.subtitle" style="-fx-font-size: 16"/>
             </VBox>
             <VBox style="-fx-padding: 10; -fx-font-size: 18; -fx-font-weight: bold" spacing="70" alignment="CENTER" VBox.vgrow="ALWAYS">
-                <Button text="Visualizza Spiagga" prefWidth="280">
+                <Button text="%menu.beach" prefWidth="280">
                     <graphic>
                         <FontIcon iconLiteral="fas-umbrella-beach" iconSize="50"/>
                     </graphic>
                 </Button>
-                <Button text="Calendario prenotazioni" prefWidth="280">
+                <Button text="%menu.calendar" prefWidth="280">
                     <graphic>
                         <FontIcon iconLiteral="fas-calendar-alt" iconSize="50"/>
                     </graphic>
                 </Button>
-                <Button text="Clienti" prefWidth="280">
+                <Button text="%menu.clients" prefWidth="280">
                     <graphic>
                         <FontIcon iconLiteral="fas-user-cog" iconSize="50"/>
                     </graphic>
                 </Button>
-                <Button text="Pagamenti" prefWidth="280">
+                <Button text="%menu.payments" prefWidth="280">
                     <graphic>
                         <FontIcon iconLiteral="fas-money-check-alt" iconSize="50"/>
                     </graphic>
                 </Button>
-                <Button text="Statistiche" prefWidth="280">
+                <Button text="%menu.stats" prefWidth="280">
                     <graphic>
                         <FontIcon iconLiteral="fas-list-alt" iconSize="50"/>
                     </graphic>
                 </Button>
-                <Button text="Impostazioni" prefWidth="280">
+                <Button text="%menu.settings" prefWidth="280">
                     <graphic>
                         <FontIcon iconLiteral="fas-cogs" iconSize="50"/>
                     </graphic>
@@ -50,5 +52,11 @@
             </VBox>
         </VBox>
     </left>
+    <center>
+        <ScrollPane>
+            <VBox>
 
+            </VBox>
+        </ScrollPane>
+    </center>
 </BorderPane>
