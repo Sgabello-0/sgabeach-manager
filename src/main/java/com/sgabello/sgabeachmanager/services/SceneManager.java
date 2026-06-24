@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,6 +39,17 @@ public class SceneManager {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void loadPage(String fxmlPath, BorderPane borderPane) {
+        try {
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath), LanguageManager.getBundle());
+            Node page = loader.load();
+            borderPane.setCenter(page);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alerts.alertErrore(LanguageManager.get("alert.context.main.newpage") + e.getMessage());
         }
     }
 

@@ -25,5 +25,8 @@ public class LanguageManager {
 
     public static String get(String key){ return bundle.getString(key); }
     public static ResourceBundle getBundle(){ return bundle; }
+
+    public static String getLanguage(){return ConfigManager.get("selected_language", "it");}
+
 }
 
