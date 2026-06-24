@@ -8,6 +8,11 @@
 
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.sgabello.sgabeachmanager.controllers.MainMenuController"
             fx:id="mainBorderPane">
@@ -53,10 +58,7 @@
         </VBox>
     </left>
     <center>
-        <ScrollPane>
-            <VBox>
 
-            </VBox>
-        </ScrollPane>
+
     </center>
 </BorderPane>
