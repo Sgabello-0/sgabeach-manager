@@ -9,8 +9,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class SceneManager {
 
@@ -50,7 +48,7 @@ public class SceneManager {
             borderPane.setCenter(page);
         } catch (IOException e) {
             e.printStackTrace();
-            Alerts.alertErrore(LanguageManager.get("alert.context.main.newpage") + e.getMessage());
+            Alerts.error(LanguageManager.get("alert.context.main.newpage") + e.getMessage());
         }
     }
 

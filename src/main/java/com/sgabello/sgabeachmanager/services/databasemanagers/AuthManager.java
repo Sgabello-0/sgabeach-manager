@@ -99,4 +99,42 @@ public class AuthManager {
         }
         return false;
     }
+
+    public static String getUsername(){
+        String sql = "SELECT username FROM user LIMIT 1";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.getString("username");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static boolean checkPasswords(String password){
+        String sql = "SELECT password FROM user LIMIT 1";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            String hashedPassword = resultSet.getString("password");
+            return BCrypt.checkpw(password, hashedPassword);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void updatePassword(User user){
+        String sql = "UPDATE user SET password = ? WHERE username = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

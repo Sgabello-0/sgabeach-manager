@@ -6,12 +6,9 @@ import com.sgabello.sgabeachmanager.services.LanguageManager;
 import com.sgabello.sgabeachmanager.services.SceneManager;
 import com.sgabello.sgabeachmanager.services.databasemanagers.AuthManager;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -30,10 +27,10 @@ public class LoginController {
                 SceneManager.openSceneMaximized("/com/sgabello/sgabeachmanager/main-view.fxml", LanguageManager.get("app.title"), false);
                 SceneManager.closeScene(userField);
             } else {
-                Alerts.alertErrore(LanguageManager.get("alert.context.login.userdoesntexist"));
+                Alerts.error(LanguageManager.get("alert.context.login.userdoesntexist"));
             }
         } else {
-            Alerts.alertErrore(LanguageManager.get("alert.context.login.fieldsnotblank"));
+            Alerts.error(LanguageManager.get("alert.context.login.fieldsnotblank"));
         }
 
     }

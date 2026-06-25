@@ -27,6 +27,10 @@
             <VBox spacing="10">
                 <Label text="%settings.account.title" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
                 <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="%settings.account.oldpassword" minWidth="200"/>
+                    <PasswordField fx:id="oldPasswordField" prefWidth="200"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
                     <Label text="%settings.account.newpassword" minWidth="200"/>
                     <PasswordField fx:id="newPasswordField" prefWidth="200"/>
                 </HBox>
