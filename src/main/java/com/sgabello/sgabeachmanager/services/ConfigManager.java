@@ -1,6 +1,7 @@
 package com.sgabello.sgabeachmanager.services;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.Properties;
 
 public class ConfigManager {
@@ -8,7 +9,7 @@ public class ConfigManager {
     private static Properties props = new Properties();
 
     public static void initialize(){
-        if (props.getProperty("selected_language") == null){
+        if (!Objects.equals(props.getProperty("selected_language"), "it") || !Objects.equals(props.getProperty("selected_language"), "en")){
             props.setProperty("selected_language", "it");
         }
         try {

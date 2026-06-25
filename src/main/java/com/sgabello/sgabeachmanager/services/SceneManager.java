@@ -8,6 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -55,5 +56,14 @@ public class SceneManager {
 
     public static void closeScene(Node node) {
         ((Stage) node.getScene().getWindow()).close();
+    }
+
+    public static void closeAllScenes(){
+        new ArrayList<>(Stage.getWindows()).forEach(window -> ((Stage) window).close());
+    }
+
+    public static void restartApp(){
+        closeAllScenes();
+        openScene("/com/sgabello/sgabeachmanager/login-view.fxml", "SgaBeach Manager", 400, 400, false);
     }
 }
