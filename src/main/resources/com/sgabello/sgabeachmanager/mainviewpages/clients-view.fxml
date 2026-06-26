@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.sgabello.sgabeachmanager.controllers.ClientsController">
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<BorderPane xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sgabello.sgabeachmanager.controllers.ClientsController">
     <top>
-        <HBox style="-fx-padding: 20 20 10 20;">
-            <Label text="Clients" style="-fx-font-size: 24; -fx-font-weight: bold;" alignment="CENTER"/>
-        </HBox>
+        <VBox>
+            <HBox style="-fx-padding: 20 20 10 20;" alignment="CENTER_LEFT" spacing="10">
+                <Label text="Clients" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+            </HBox>
+            <Separator/>
+            <HBox style="-fx-padding: 20 20 10 20;" alignment="CENTER_LEFT" spacing="10">
+                <Button minHeight="80" minWidth="80" onAction="#onAddClientClick">
+                    <graphic>
+                        <VBox alignment="CENTER" spacing="4">
+                            <FontIcon iconLiteral="fas-user-plus" iconSize="30"/>
+                            <Label text="Add Client" style="-fx-font-size: 14;"/>
+                        </VBox>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
     </top>
-    <Separator/>
     <center>
-        <TableView fx:id="tabellaClienti" style="-fx-padding: 0 20 20 20;">
+        <TableView fx:id="clientTable"
+                   style="-fx-padding: 20;">
             <columns>
-                <TableColumn fx:id="colNome"     text="First name"   prefWidth="200"/>
-                <TableColumn fx:id="colCognome"  text="Last name"    prefWidth="200"/>
-                <TableColumn fx:id="colTelefono" text="Phone number" prefWidth="200"/>
+                <TableColumn fx:id="colFirstName"   text="First name"    prefWidth="150"/>
+                <TableColumn fx:id="colLastName"    text="Last name"     prefWidth="150"/>
+                <TableColumn fx:id="colPhone"       text="Phone number"  prefWidth="150"/>
+                <TableColumn fx:id="colNotes"       text="Notes"         prefWidth="150"/>
             </columns>
         </TableView>
     </center>
-
 </BorderPane>

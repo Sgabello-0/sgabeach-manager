@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sgabello.sgabeachmanager.controllers.AddClientsController">
+
+    <top>
+        <Label text="Add a Client"
+               style="-fx-font-size: 24; -fx-font-weight: bold; -fx-padding: 15;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Nome: "
+                       minWidth="100"/>
+                <TextField fx:id="firstNameField"
+                           promptText="es. Gabriele"
+                           prefWidth="120"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Cognome: "
+                       minWidth="100"/>
+                <TextField fx:id="lastNameField"
+                           promptText="es. Demarchi"
+                           prefWidth="120"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Telefono: "
+                       minWidth="100"/>
+                <TextField fx:id="phoneField"
+                           promptText="351 717 0889"
+                           prefWidth="120"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10;">
+            <Button text="Add Client" onAction="#onAddClick"
+                    prefWidth="60"/>
+        </HBox>
+    </bottom>
+</BorderPane>
