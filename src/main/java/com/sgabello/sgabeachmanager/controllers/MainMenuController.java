@@ -19,4 +19,8 @@ public class MainMenuController {
         SceneManager.loadPage("/com/sgabello/sgabeachmanager/mainviewpages/settings-view.fxml", mainBorderPane);
     }
 
+    @FXML private void onClientsClick(){
+        SceneManager.loadPage("/com/sgabello/sgabeachmanager/mainviewpages/clients-view.fxml", mainBorderPane);
+    }
+
 }

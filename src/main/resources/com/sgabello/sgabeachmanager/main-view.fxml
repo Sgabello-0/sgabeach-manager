@@ -34,7 +34,7 @@
                         <FontIcon iconLiteral="fas-calendar-alt" iconSize="50"/>
                     </graphic>
                 </Button>
-                <Button text="%menu.clients" prefWidth="280">
+                <Button text="%menu.clients" prefWidth="280" onAction="#onClientsClick">
                     <graphic>
                         <FontIcon iconLiteral="fas-user-cog" iconSize="50"/>
                     </graphic>
