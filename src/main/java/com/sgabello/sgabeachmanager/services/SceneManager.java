@@ -17,6 +17,8 @@ public class SceneManager {
             FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxmlPath), LanguageManager.getBundle());
             Stage stage = new Stage();
             stage.setTitle(title);
+            stage.setWidth(width);
+            stage.setHeight(height);
             stage.setMinWidth(width);
             stage.setMinHeight(height);
             stage.setResizable(resizable);

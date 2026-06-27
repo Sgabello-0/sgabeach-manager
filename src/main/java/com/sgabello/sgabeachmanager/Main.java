@@ -4,6 +4,7 @@ import com.sgabello.sgabeachmanager.services.ConfigManager;
 import com.sgabello.sgabeachmanager.services.LanguageManager;
 import com.sgabello.sgabeachmanager.services.SceneManager;
 import com.sgabello.sgabeachmanager.services.databasemanagers.AuthManager;
+import com.sgabello.sgabeachmanager.services.databasemanagers.DatabaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +19,9 @@ public class Main extends Application {
         AuthManager.createUserTableIfNotExist();
         ConfigManager.load();
         ConfigManager.initialize();
+        DatabaseManager.connect();
+        DatabaseManager.createTablesIfNotExist();
         LanguageManager.loadFromConfig();
-        SceneManager.openScene("/com/sgabello/sgabeachmanager/login-view.fxml", "SgaBeach Manager", 400, 400, false);
+        SceneManager.openScene("/com/sgabello/sgabeachmanager/login-view.fxml", "SgaBeach Manager", 450, 450, false);
     }
 }

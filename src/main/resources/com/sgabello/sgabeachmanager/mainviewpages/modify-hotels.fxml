@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sgabello.sgabeachmanager.controllers.ModifyHotelsController">
+    <top>
+        <VBox>
+            <HBox style="-fx-padding: 20 20 10 20;" alignment="CENTER_LEFT">
+                <Label text="Manage Hotel List" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+            </HBox>
+            <Separator/>
+            <VBox style="-fx-padding: 20 20 10 20;" spacing="12">
+
+                <!-- Add hotel -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Add hotel:" minWidth="120"/>
+                    <TextField fx:id="hotelNameField" promptText="Hotel name..." prefWidth="250"/>
+                    <Button text="Add" onAction="#onAddClick"/>
+                </HBox>
+
+                <!-- Import list -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Import hotel list:" minWidth="120"/>
+                    <Button text="Import" onAction="#onImportClick"/>
+                </HBox>
+
+            </VBox>
+            <Separator/>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="hotelsTable" style="-fx-padding: 20;">
+            <columns>
+                <TableColumn fx:id="colHotelName" text="Hotel name" prefWidth="300"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10;">
+            <Button text="OK" onAction="#onOKClick"
+                    prefWidth="60"/>
+        </HBox>
+    </bottom>
+</BorderPane>

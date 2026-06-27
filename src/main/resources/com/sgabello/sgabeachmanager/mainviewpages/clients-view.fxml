@@ -21,6 +21,14 @@
                         </VBox>
                     </graphic>
                 </Button>
+                <Button minHeight="80" minWidth="80" onAction="#onModifyHotelsClick">
+                    <graphic>
+                        <VBox alignment="CENTER" spacing="4">
+                            <FontIcon iconLiteral="fas-hotel" iconSize="30"/>
+                            <Label text="Modify Hotel List" style="-fx-font-size: 11;"/>
+                        </VBox>
+                    </graphic>
+                </Button>
             </HBox>
         </VBox>
     </top>

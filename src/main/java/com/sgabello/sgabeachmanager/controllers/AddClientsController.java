@@ -7,8 +7,11 @@ import javafx.scene.control.TextField;
 public class AddClientsController {
 
     @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField phoneField;
 
     @FXML private void onAddClick(){
+
         SceneManager.closeScene(firstNameField);
     }
 }
